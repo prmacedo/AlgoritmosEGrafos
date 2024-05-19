@@ -51,20 +51,20 @@ public class Test {
         long start;
         long end;
 
-        start = System.currentTimeMillis();
+        start = System.nanoTime();
         System.out.println(Arrays.toString(ClosestPairOfPoints.bruteForceSolution(points)));
-        end = System.currentTimeMillis();
-        System.out.println(points.length + " points: " + (end - start) + "ms");
+        end = System.nanoTime();
+        System.out.println(points.length + " points: " + (end - start) / 1_000_000d + "ms");
     }
 
     private static void analyzeDivideAndConquer(Point[] points) {
         long start;
         long end;
 
-        start = System.currentTimeMillis();
+        start = System.nanoTime();
         System.out.println(Arrays.toString(ClosestPairOfPoints.divideAndConquerSolution(points)));
-        end = System.currentTimeMillis();
-        System.out.println(points.length + " points: " + (end - start) + "ms");
+        end = System.nanoTime();
+        System.out.println(points.length + " points: " + (end - start) / 1_000_000d + "ms");
     }
 
     public static Point[] generatePoints(int size) {
