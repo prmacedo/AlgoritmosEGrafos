@@ -5,35 +5,46 @@ import java.util.Random;
 
 public class Test {
     public static void main(String[] args) {
-        Point[] points10 = generatePoints(100000);
-//        Point[] points100 = generatePoints(100);
-//        Point[] points250 = generatePoints(250);
-//        Point[] points500 = generatePoints(500);
-//        Point[] points1000 = generatePoints(1000);
-//        Point[] points2000 = generatePoints(2000);
+        Point[] points10 = generatePoints(10);
+        Point[] points100 = generatePoints(100);
+        Point[] points250 = generatePoints(250);
+        Point[] points500 = generatePoints(500);
+        Point[] points1000 = generatePoints(1000);
+        Point[] points2000 = generatePoints(2000);
 
-        System.out.println(Arrays.toString(points10));
+        // Warm-up
+        analyzeBruteForce(points10);
+        System.out.println();
 
-//        System.out.println(Arrays.toString(points10.toArray()));
-//
-//        // Brute Force - Warm Up
+        // 10 Points
         analyzeBruteForce(points10);
         analyzeDivideAndConquer(points10);
-//
-//        // 100 Points
-//        analyzeBruteForce(points100);
-//
-//        // 250 Points
-//        analyzeBruteForce(points250);
-//
-//        // 500 Points
-//        analyzeBruteForce(points500);
-//
-//        // 1000 Points
-//        analyzeBruteForce(points1000);
-//
-//        // 2000 Points
-//        analyzeBruteForce(points2000);
+        System.out.println();
+
+        // 100 Points
+        analyzeBruteForce(points100);
+        analyzeDivideAndConquer(points100);
+        System.out.println();
+
+        // 250 Points
+        analyzeBruteForce(points250);
+        analyzeDivideAndConquer(points250);
+        System.out.println();
+
+        // 500 Points
+        analyzeBruteForce(points500);
+        analyzeDivideAndConquer(points500);
+        System.out.println();
+
+        // 1000 Points
+        analyzeBruteForce(points1000);
+        analyzeDivideAndConquer(points1000);
+        System.out.println();
+
+        // 2000 Points
+        analyzeBruteForce(points2000);
+        analyzeDivideAndConquer(points2000);
+        System.out.println();
     }
 
     private static void analyzeBruteForce(Point[] points) {
