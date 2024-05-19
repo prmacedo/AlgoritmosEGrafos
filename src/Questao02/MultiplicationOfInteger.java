@@ -28,26 +28,25 @@ public class MultiplicationOfInteger {
         return sb.isEmpty() ? "0" : sb.toString();
     }
 
-    public static BigInteger karatsuba(BigInteger num1, BigInteger num2) {
-        if (num1.compareTo(BigInteger.TEN) < 0 || num2.compareTo(BigInteger.TEN) < 0) {
-            return num1.multiply(num2);
+    public static long karatsuba(long num1, long num2) {
+        if (num1 < 10 || num2 < 10) {
+            return num1 * num2;
         }
 
-        int n = Math.max(num1.bitLength(), num2.bitLength());
-        int m = n / 2;
+        int n = Math.max(String.valueOf(num1).length(), String.valueOf(num2).length());
+        int m = (n + 1) / 2;
 
-        BigInteger[] num1Parts = num1.divideAndRemainder(BigInteger.ONE.shiftLeft(m));
-        BigInteger p = num1Parts[0];
-        BigInteger q = num1Parts[1];
+        long power = (long) Math.pow(10, m);
 
-        BigInteger[] num2Parts = num2.divideAndRemainder(BigInteger.ONE.shiftLeft(m));
-        BigInteger r = num2Parts[0];
-        BigInteger s = num2Parts[1];
+        long p = num1 / power;
+        long q = num1 % power;
+        long r = num2 / power;
+        long s = num2 % power;
 
-        BigInteger qs = karatsuba(q, s); // z0
-        BigInteger y = karatsuba(q.add(p), s.add(r)); // z1
-        BigInteger pr = karatsuba(p, r); // z2
+        long pr = karatsuba(p, r);
+        long qs = karatsuba(q, s);
+        long y = karatsuba(p + q, r + s);
 
-        return pr.shiftLeft(2 * m).add(y.subtract(pr).subtract(qs).shiftLeft(m)).add(qs);
+        return pr * power * power + (y - pr - qs) * power + qs;
     }
 }
