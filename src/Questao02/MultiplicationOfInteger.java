@@ -1,7 +1,7 @@
 package Questao02;
 
 public class MultiplicationOfInteger {
-    public static String solutionBruteForce(String num1, String num2) {
+    public static String bruteForceSolution(String num1, String num2) {
         int n1 = num1.length();
         int n2 = num2.length();
         int[] result = new int[n1 + n2];
