@@ -5,28 +5,28 @@ import java.math.BigInteger;
 public class Test {
     public static void main(String[] args) {
         // Warm-up
-        analyzeBruteForce("99", "99");
-        analyzeDivideAndConquer(99L, 99L);
+        analyzeBruteForce("999888777", "999888777");
+        analyzeDivideAndConquer(999888777L, 999888777L);
         System.out.println();
 
-        // 2 dígitos
-        analyzeBruteForce("99", "99");
-        analyzeDivideAndConquer(99L, 99L);
+        // 9 dígitos
+        analyzeBruteForce("999888777", "999888777");
+        analyzeDivideAndConquer(999888777L, 999888777L);
         System.out.println();
 
-        // 3 dígitos
-        analyzeBruteForce("999", "999");
-        analyzeDivideAndConquer(999L, 999L);
+        // 12 dígitos
+        analyzeBruteForce("999888777666", "999888777666");
+        analyzeDivideAndConquer(999888777666L, 999888777666L);
         System.out.println();
 
-        // 4 dígitos
-        analyzeBruteForce("9999", "9999");
-        analyzeDivideAndConquer(9999L, 9999L);
+        // 15 dígitos
+        analyzeBruteForce("999888777666555", "999888777666555");
+        analyzeDivideAndConquer(999888777666555L, 999888777666555L);
         System.out.println();
 
-        // 5 dígitos
-        analyzeBruteForce("99996", "99996");
-        analyzeDivideAndConquer(99996L, 99996L);
+        // 18 dígitos
+        analyzeBruteForce("999888777666555444", "999888777666555444");
+        analyzeDivideAndConquer(999888777666555444L, 999888777666555444L);
         System.out.println();
     }
 
